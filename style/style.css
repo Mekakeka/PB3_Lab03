@@ -1,0 +1,309 @@
+/* 1 Загальні налаштування */
+html {
+  color-scheme: light;
+  background-color: #f6f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f6f7fb;
+  color: #1c1f2a;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 2 Header */
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e3e6ef;
+  padding: 16px 0;
+}
+
+header .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: Georgia, serif;
+}
+
+.brand span {
+  color: #4f46e5;
+}
+
+nav ul {
+  display: flex;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  display: block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 500;
+  color: #5d6478;
+}
+
+nav a:hover, nav a.active {
+  background-color: #eceafd;
+  color: #4f46e5;
+}
+
+/* 3 Головна частина та макет (Grid) */
+main.wrap {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 32px;
+  padding: 36px 20px;
+  align-items: start;
+}
+
+.posts > h2 {
+  font-size: 1.9rem;
+  margin-bottom: 20px;
+  font-family: Georgia, serif;
+}
+
+/* Картки статей */
+article {
+  display: flex;
+  gap: 20px;
+  background: #ffffff;
+  border: 1px solid #e3e6ef;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+
+.thumb {
+  flex: 0 0 150px;
+  height: 120px;
+  border-radius: 10px;
+  background: #eceafd;
+  background: var(--g, #eceafd);
+  display: grid;
+  place-items: center;
+  font-size: 2.6rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: .75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #4f46e5;
+}
+
+article h3 {
+  font-size: 1.3rem;
+  margin: 2px 0 4px;
+  font-family: Georgia, serif;
+}
+
+article h3 a:hover {
+  color: #4f46e5;
+}
+
+.meta {
+  font-size: .85rem;
+  color: #5d6478;
+  margin: 0 0 6px;
+}
+
+.excerpt {
+  margin: 0 0 8px;
+  color: #5d6478;
+}
+
+.more {
+  font-weight: 600;
+  color: #4f46e5;
+}
+
+.more:hover {
+  text-decoration: underline;
+}
+
+/* 4 Бічна панель */
+aside {
+  background: #ffffff;
+  border: 1px solid #e3e6ef;
+  border-radius: 14px;
+  padding: 20px;
+}
+
+aside form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+aside input, aside button {
+  font: inherit;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid #e3e6ef;
+}
+
+aside input {
+  background: #f6f7fb;
+  color: #1c1f2a;
+}
+
+aside input:focus {
+  outline: 2px solid #4f46e5;
+  border-color: transparent;
+}
+
+aside button {
+  background: #4f46e5;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+aside button:hover {
+  opacity: .9;
+}
+
+aside h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-family: Georgia, serif;
+}
+
+aside ul {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+}
+
+aside li a {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 10px;
+  border-radius: 8px;
+  color: #5d6478;
+}
+
+aside li a:hover {
+  background: #eceafd;
+  color: #4f46e5;
+}
+
+/* 5 Footer */
+footer {
+  background: #ffffff;
+  border-top: 1px solid #e3e6ef;
+  text-align: center;
+  color: #5d6478;
+  padding: 24px 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* 6 Адаптивність */
+.posts {
+  min-width: 0;
+}
+
+@media (max-width: 760px) {
+  header {
+    padding: 12px 0;
+  }
+
+  header .wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .brand {
+    font-size: 1.4rem;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  nav a {
+    padding: 6px 12px;
+    white-space: nowrap;
+  }
+
+  main.wrap {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px 20px;
+  }
+
+  .posts > h2 {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+  }
+
+  article {
+    flex-direction: column;
+    gap: 14px;
+    padding: 14px;
+    margin-bottom: 16px;
+  }
+
+  .thumb {
+    flex-basis: auto;
+    width: 100%;
+    height: 130px;
+  }
+
+  article h3 {
+    font-size: 1.15rem;
+  }
+
+  aside {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .wrap {
+    padding: 0 14px;
+  }
+
+  main.wrap {
+    padding: 20px 14px;
+  }
+
+  nav a {
+    padding: 6px 10px;
+    font-size: .95rem;
+  }
+}
